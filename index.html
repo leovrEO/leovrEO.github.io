@@ -1,0 +1,66 @@
+<html>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<style>
+.column1 {
+float: left;
+width: 960px;
+margin-bottom: -5%;
+margin-top: 1%;
+padding-top: 1%;
+}
+
+.column2 {
+float: left;
+width: 420px;
+margin-bottom: -5%;
+margin-top: 1%;
+padding-top: 1%;
+}
+
+
+.row {
+content: "";
+width: 90%;
+text-align: center;
+margin-left: 2%;
+display: inline-table;
+clear: both;
+}
+
+
+</style>
+<body >
+    <div class="row">
+
+      <div class="column1">
+
+      <iframe width="960" height="540"
+      src="https://www.youtube.com/embed/videoseries?list=PL-n9AVPt8zZlS9g7Sd7nTQJzfoJZWlkE_&autoplay=1&loop=1"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+
+    </div>
+
+
+        <div class="column2">
+
+          <iframe width="420" height="540" id="tweets"
+          src="./tweets.html"
+          frameborder="0"></iframe>
+
+        </div>
+        <script src="app.js"></script>
+
+<script>
+        var iframe = document.getElementById('tweets');
+        iframe.src = iframe.src;
+</script>
+
+        </div>
+</body>
+
+</html>

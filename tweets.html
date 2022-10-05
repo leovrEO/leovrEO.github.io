@@ -1,0 +1,70 @@
+<html>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<body onLoad="pageScroll()">
+
+  <div style="visibility: hidden;">
+                <a class="twitter-timeline" data-tweet-limit="10"
+                  data-theme="light"
+                  data-chrome="noheader, nofooter, transparent, noborders"
+                  width="420" href="https://twitter.com/ESPNDeportes"
+                  data-widget-id="test"
+                  >
+                </a>
+  </div>
+
+
+
+<div style="visibility: hidden;">
+              <a class="twitter-timeline" data-tweet-limit="10"
+                data-theme="light"
+                data-chrome="noheader, nofooter, transparent, noborders"
+                width="420" href="https://twitter.com/Mexicali_686"
+                data-widget-id="test"
+                >
+              </a>
+</div>
+<div>
+              <a class="twitter-timeline" data-tweet-limit="10"
+                data-theme="light"
+                data-chrome="noheader, nofooter, transparent, noborders"
+                width="420" href="https://twitter.com/lacronicacom"
+                data-widget-id="test2">
+              </a>
+</div>
+
+        <script src="app.js"></script>
+        <script>
+              var i=0;
+        function pageScroll() {
+
+          window.scrollBy(0, 540); // horizontal and vertical scroll increments
+          scrolldelay = setTimeout('pageScroll()', 10000); // scrolls every 100 milliseconds
+          if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+            clearTimeout(scrolldelay);
+            scrolldelay = setTimeout('PageUp()', 2000);
+
+          if(i==3){
+            window.location.reload();
+            i=0;
+          }
+          i=i+1;
+
+console.log(i);
+
+}
+        }
+
+        function PageUp() {
+          window.scrollTo(0, 0);
+          setTimeout(function() {
+            pageScroll()
+          }, 1600);
+        }
+
+        </script>
+
+</body>
+
+</html>
