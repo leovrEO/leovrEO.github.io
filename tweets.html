@@ -37,10 +37,7 @@
         <script src="app.js"></script>
         <script>
               var i=0;
-        function pageScroll() {
- setTimeout(function() {
-           
-          }, 15000);
+       
           window.scrollBy(0, 540); // horizontal and vertical scroll increments
           scrolldelay = setTimeout('pageScroll()', 10000); // scrolls every 100 milliseconds
           if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
@@ -60,9 +57,13 @@ console.log(i);
 
         function PageUp() {
           window.scrollTo(0, 0);
+           function pageScroll() {
+ setTimeout(function() {
+           
+          }, 15000);
           setTimeout(function() {
             pageScroll()
-          }, 10000);
+          }, 50000);
         }
 
         </script>
