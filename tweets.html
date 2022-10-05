@@ -42,10 +42,10 @@
            
           }, 2000);
           window.scrollBy(0, 540); // horizontal and vertical scroll increments
-          scrolldelay = setTimeout('pageScroll()', 13000); // scrolls every 100 milliseconds
+          scrolldelay = setTimeout('pageScroll()', 10000); // scrolls every 100 milliseconds
           if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
             clearTimeout(scrolldelay);
-            scrolldelay = setTimeout('PageUp()', 10000);
+            scrolldelay = setTimeout('PageUp()', 12000);
 
           if(i==5){
             window.location.reload();
@@ -62,7 +62,7 @@ console.log(i);
           window.scrollTo(0, -540);
           setTimeout(function() {
             pageScroll()
-          }, 10000);
+          }, 6000);
         }
 
         </script>
