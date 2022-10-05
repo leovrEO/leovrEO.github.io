@@ -16,15 +16,6 @@
 
 
 
-<div style="visibility: hidden;">
-              <a class="twitter-timeline" data-tweet-limit="10"
-                data-theme="light"
-                data-chrome="noheader, nofooter, transparent, noborders"
-                width="420" href="https://twitter.com/mileniotv"
-                data-widget-id="test"
-                >
-              </a>
-</div>
 <div>
               <a class="twitter-timeline" data-tweet-limit="10"
                 data-theme="light"
@@ -34,16 +25,16 @@
               </a>
 </div>
 
-  
-      <script>
+        <script src="app.js"></script>
+        <script>
               var i=0;
         function pageScroll() {
 
           window.scrollBy(0, 540); // horizontal and vertical scroll increments
-          scrolldelay = setTimeout('pageScroll()', 30000); // scrolls every 100 milliseconds
+          scrolldelay = setTimeout('pageScroll()', 5000); // scrolls every 100 milliseconds
           if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
             clearTimeout(scrolldelay);
-            scrolldelay = setTimeout('PageUp()', 20000);
+            scrolldelay = setTimeout('PageUp()', 5000);
 
           if(i==3){
             window.location.reload();
@@ -60,7 +51,7 @@ console.log(i);
           window.scrollTo(0, 0);
           setTimeout(function() {
             pageScroll()
-          }, 90000);
+          }, 10000);
         }
 
         </script>
