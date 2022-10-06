@@ -35,7 +35,7 @@
 
 
   <script>
-  jQuery(document).ready(function($) {
+  function Temperatura() {
     $.ajax({
     url : "http://api.openweathermap.org/data/2.5/weather?q=Mexicali,MX&APPID=c0d1271514bd7d0981c07f403be43004&units=imperial&lang=es&mode=xml",
     dataType : "jsonp",
@@ -74,7 +74,7 @@
     }
     });
 
-  });
+  }
   </script>
 
 
@@ -136,6 +136,8 @@
 <script>
 
 console.log("ccc");
+setTimeout('Temperatura()', 100);
+
 setTimeout('tiempo()', 100);
 
 
