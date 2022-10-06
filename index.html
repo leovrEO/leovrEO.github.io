@@ -37,7 +37,7 @@
 
 
   <script>
-  jQuery(document).ready(function($) {
+function HoraTemp() {
     $.ajax({
     url : "http://api.openweathermap.org/data/2.5/weather?q=Mexicali,MX&APPID=c0d1271514bd7d0981c07f403be43004&units=imperial&lang=es&mode=xml",
     dataType : "jsonp",
@@ -97,7 +97,7 @@ setTimeout('tiempo()', 1000);
 
 
 
-<body >
+<body onLoad="HoraTemp()" >
   <div class="container">
 
 
