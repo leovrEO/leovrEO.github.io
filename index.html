@@ -135,6 +135,11 @@ setTimeout('tiempo()', 1000);
 <script src="./js/mef.js"></script>
 
 <script>
+  var fd=d.toLocaleTimeString();
+console.log(d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
+
+document.getElementById("horaLocal").innerHTML = d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+  
   function tiempo() {
 d = new Date();
 var fd=d.toLocaleTimeString();
