@@ -1,0 +1,76 @@
+<html>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<body onLoad="pageScroll()">
+
+
+
+
+
+  <div style="visibility: hidden;">
+                <a class="twitter-timeline" data-tweet-limit="10"
+                  data-theme="light"
+                  data-chrome="noheader, nofooter, transparent, noborders"
+                  width="420" href="https://twitter.com/mileniotv"
+                  data-widget-id="test"
+                  >
+                </a>
+  </div>
+
+
+  <div style="visibility: hidden;">
+                <a class="twitter-timeline" data-tweet-limit="10"
+                  data-theme="light"
+                  data-chrome="noheader, nofooter, transparent, noborders"
+                  width="420" href="https://twitter.com/ESPNDeportes"
+                  data-widget-id="test"
+                  >
+                </a>
+  </div>
+
+
+
+<div>
+              <a class="twitter-timeline" data-tweet-limit="10"
+                data-theme="light"
+                data-chrome="noheader, nofooter, transparent, noborders"
+                width="420" href="https://twitter.com/lacronicacom"
+                data-widget-id="test2">
+              </a>
+</div>
+
+    
+        <script>
+              var i=0;
+        function pageScroll() {
+
+          window.scrollBy(0, 300); // horizontal and vertical scroll increments
+          scrolldelay = setTimeout('pageScroll()', 12000); // scrolls every 100 milliseconds
+          if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+            clearTimeout(scrolldelay);
+            scrolldelay = setTimeout('PageUp()', 9000);
+
+          if(i==3){
+            window.location.reload();
+            i=0;
+          }
+          i=i+1;
+
+console.log(i);
+
+}
+        }
+
+        function PageUp() {
+          window.scrollTo(0, 0);
+          setTimeout(function() {
+            pageScroll()
+          }, 80000);
+        }
+
+        </script>
+
+</body>
+
+</html>
