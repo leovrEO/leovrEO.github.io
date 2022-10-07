@@ -35,46 +35,7 @@
 
 
   <script>
-  function Temperatura() {
-    document.ajax({
-    url : "http://api.openweathermap.org/data/2.5/weather?q=Mexicali,MX&APPID=c0d1271514bd7d0981c07f403be43004&units=imperial&lang=es&mode=xml",
-    dataType : "jsonp",
-    success : function(parsed_json) {
-
-
-
-
-    var location = parsed_json['name'];
-    var temp_f = parsed_json['main'].temp;
-
-
-
-  d = new Date();
-  var fd=d.toLocaleTimeString();
-
-  //fd="ascdewds";
-
-
-  //console.log(d.getDate());   // -> 23:45:26
-  //console.log(d.getMonth());   // -> 23:45:26
-  //console.log(d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
-
-  //console.log(fd.slice(0, 5));
-
-
-     //document.getElementById("temphoraLocal").innerHTML =Math.round(temp_f) +"  &deg;F  " +" &nbsp;&nbsp;&nbsp;&nbsp;"+ d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-
-  //				document.getElementById("temphoraLocal").innerHTML =Math.round(temp_f) +"  &deg;F  " +" &nbsp;&nbsp;&nbsp;&nbsp;"+ fd.slice(0, 5);
-          document.getElementById("tempLocal").innerHTML =Math.round(temp_f) +"  &deg;F  " +" &nbsp;&nbsp;&nbsp;&nbsp;";
-
-          document.getElementById("horaLocal").innerHTML = d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-
-
-
-    }
-    });
-
-  }
+  
   </script>
 
 
