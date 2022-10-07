@@ -1,0 +1,204 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/blog/">
+  <script src="https://kit.fontawesome.com/a09237c4ad.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+  <title></title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <!-- Bootstrap -->
+<!--
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+-->
+
+
+  <!-- Custom styles for this template -->
+
+  <link href="./css/bootstrap.css" rel="stylesheet">
+
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+
+  <script>
+  function Temperatura() {
+    document.ajax({
+    url : "http://api.openweathermap.org/data/2.5/weather?q=Mexicali,MX&APPID=c0d1271514bd7d0981c07f403be43004&units=imperial&lang=es&mode=xml",
+    dataType : "jsonp",
+    success : function(parsed_json) {
+
+
+
+
+    var location = parsed_json['name'];
+    var temp_f = parsed_json['main'].temp;
+
+
+
+  d = new Date();
+  var fd=d.toLocaleTimeString();
+
+  //fd="ascdewds";
+
+
+  //console.log(d.getDate());   // -> 23:45:26
+  //console.log(d.getMonth());   // -> 23:45:26
+  //console.log(d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
+
+  //console.log(fd.slice(0, 5));
+
+
+     //document.getElementById("temphoraLocal").innerHTML =Math.round(temp_f) +"  &deg;F  " +" &nbsp;&nbsp;&nbsp;&nbsp;"+ d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+
+  //				document.getElementById("temphoraLocal").innerHTML =Math.round(temp_f) +"  &deg;F  " +" &nbsp;&nbsp;&nbsp;&nbsp;"+ fd.slice(0, 5);
+          document.getElementById("tempLocal").innerHTML =Math.round(temp_f) +"  &deg;F  " +" &nbsp;&nbsp;&nbsp;&nbsp;";
+
+          document.getElementById("horaLocal").innerHTML = d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+
+
+
+    }
+    });
+
+  }
+  </script>
+
+
+<style>
+.barra{
+  background-color: #333;
+}
+</style>
+
+
+
+
+
+
+
+</head>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+<body >
+  <div class="container">
+
+
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-7 col-xs-7">
+
+                                  <iframe width="560" height="315"
+                                  src="https://www.youtube.com/embed/6PpkWxLbcjY?controls=0"
+                                  title="YouTube video player" frameborder="0"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowfullscreen></iframe>
+
+      </div>
+
+
+      <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <iframe  height="315" id="tweets"
+          src="./tweets.html"
+          frameborder="0"></iframe>
+      </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10">
+          <h3 class="pull-right"><span id="tempLocal"></span><span id="horaLocal"></span></h3>
+
+            </div>
+
+          </div>
+
+</div>
+
+
+
+
+
+<script>
+
+console.log("ccc");
+setTimeout('temperatura()', 100);
+setTimeout('tiempo()', 100);
+
+
+  function tiempo() {
+d = new Date();
+var fd=d.toLocaleTimeString();
+console.log(d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
+
+document.getElementById("horaLocal").innerHTML = d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+setTimeout('tiempo()', 105000);
+console.log(d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
+
+}
+
+
+function temperatura() {
+  let url = 'http://api.openweathermap.org/data/2.5/weather?q=Mexicali,MX&APPID=c0d1271514bd7d0981c07f403be43004&units=imperial&lang=es&mode=JSON';
+
+let response = fetch(url)
+.then(res => res.json())
+.then((out) => {
+  console.log('Checkout this JSON! ', out);
+
+  console.log('Checkout this PP! ', out.main);
+  document.getElementById("tempLocal").innerHTML =Math.round(out.main.temp) +"  &deg;F  " +" &nbsp;&nbsp;&nbsp;&nbsp;";
+
+  console.log('Checkout this PP! ', out.main.temp);
+
+}).catch(err => { throw err });
+
+
+
+console.log(response);
+  //
+  // fetch(url)
+  // .then(res => res.json())
+  // .then((out) => {
+  //   console.log('Checkout this JSON! ', out);
+  //
+  //
+  //   const obj = JSON.parse(out);
+  //
+  //   console.log(obj);
+  //
+  //
+  //
+  // })
+  // .catch(err => { throw err });
+  //
+
+
+
+
+
+}
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
